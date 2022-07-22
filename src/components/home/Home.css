@@ -6,6 +6,7 @@
   height: calc(100vh - 77.96px) !important;
   border: none !important;
   position: relative;
+  margin-bottom: -100px;
 }
 .home-card::before {
   content: "";

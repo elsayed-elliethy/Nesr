@@ -26,7 +26,7 @@ function Navbar() {
   });
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
+      <nav className="navbar navbar-expand-lg bg-white shadow-sm">
         <div className="container">
           <NavLink className="navbar-brand fw-bold fs-4" to="/">
             <img src={logo} alt="..." className="mw-100" />

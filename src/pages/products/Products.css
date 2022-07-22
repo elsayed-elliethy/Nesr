@@ -19,7 +19,7 @@
 
 @media (max-width: 767px) {
   .buttons .btn {
-    padding: 10px 1px;
+    padding: 10px 1px !important;
     font-size: 12px;
   }
 }
