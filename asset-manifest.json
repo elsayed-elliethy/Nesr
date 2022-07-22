@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/Nesr/static/css/main.df87e2a3.css",
+    "main.js": "/Nesr/static/js/main.d4c55795.js",
+    "static/js/787.46493d11.chunk.js": "/Nesr/static/js/787.46493d11.chunk.js",
+    "static/media/about-9.png": "/Nesr/static/media/about-9.ac1bf3fa3aafd36991b3.png",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/Nesr/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/phones.jpg": "/Nesr/static/media/phones.65839a38efe3d2537711.jpg",
+    "static/media/fontawesome-webfont.eot": "/Nesr/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/Nesr/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/contact-2.png": "/Nesr/static/media/contact-2.b8bc31394983bdddecad.png",
+    "static/media/girl1.jpg": "/Nesr/static/media/girl1.960ff282036e3c4e63eb.jpg",
+    "static/media/boy.jpg": "/Nesr/static/media/boy.f6e01ff2a6ae714f244b.jpg",
+    "static/media/about-6.png": "/Nesr/static/media/about-6.370e998a5720a8f77ca6.png",
+    "static/media/about-8.png": "/Nesr/static/media/about-8.0f06832c1b5941e9e5bf.png",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/Nesr/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/Nesr/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/modal-background.svg": "/Nesr/static/media/modal-background.e7e9176e3842bd2030fa02badbbb2a24.svg",
+    "static/media/logo.jpg": "/Nesr/static/media/logo.9126206ff784c2e07039.jpg",
+    "static/media/icon-2.svg": "/Nesr/static/media/icon-2.622b96aa8375916171721496261f6986.svg",
+    "static/media/icon-6.svg": "/Nesr/static/media/icon-6.52cd022b53f13b12f573a0dd57fc804e.svg",
+    "static/media/icon-1.svg": "/Nesr/static/media/icon-1.5b1776e2a1d7ec897722f605a8118984.svg",
+    "static/media/icon-4.svg": "/Nesr/static/media/icon-4.84d7a8a08622e302a2d50459d2cddb62.svg",
+    "static/media/icon-5.svg": "/Nesr/static/media/icon-5.e85986742a6c5c3748db8c239b11dd57.svg",
+    "static/media/icon-3.svg": "/Nesr/static/media/icon-3.a41b48d5c6678b96129a842057548c86.svg",
+    "static/media/images.jfif": "/Nesr/static/media/images.7a43ad9ab67319119979.jfif",
+    "index.html": "/Nesr/index.html",
+    "main.df87e2a3.css.map": "/Nesr/static/css/main.df87e2a3.css.map",
+    "main.d4c55795.js.map": "/Nesr/static/js/main.d4c55795.js.map",
+    "787.46493d11.chunk.js.map": "/Nesr/static/js/787.46493d11.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df87e2a3.css",
+    "static/js/main.d4c55795.js"
+  ]
+}
