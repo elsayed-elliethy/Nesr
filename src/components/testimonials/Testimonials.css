@@ -1,0 +1,96 @@
+.testinomials {
+  margin-top: 100px;
+  height: 600px;
+  background-color: var(--mainColor);
+  color: #fff;
+  text-align: center;
+  padding: 50px 0 200px;
+  position: relative;
+}
+.testinomials h2 {
+  font-weight: bold;
+}
+.testinomials .carousel {
+  background-color: #fff;
+  width: 80%;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+}
+.testinomials .carousel-caption {
+}
+
+.testinomials .carousel img {
+  width: 100px;
+  max-width: 100%;
+  border-radius: 50%;
+  margin-top: 30px;
+  margin-bottom: 220px;
+}
+.testinomials .carousel p {
+  color: #555;
+  font-size: 20px;
+  line-height: 1.6;
+}
+.testinomials .carousel h3 {
+  color: var(--mainColor);
+  margin-bottom: 30px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: -70px !important;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin-right: 15%;
+  margin-left: 15%;
+  list-style: none;
+}
+
+.carousel-indicators button {
+  width: 15px !important;
+  height: 15px !important;
+  border-radius: 50% !important;
+  border: none;
+  margin-left: 10px;
+  background-color: #b9576d;
+}
+.carousel-indicators button.active {
+  background-color: #fff;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  display: none !important;
+}
+@media (max-width: 991px) {
+  .testinomials .carousel p {
+    font-size: 16px;
+  }
+  .testinomials .carousel h3 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .testinomials .carousel {
+    height: 350px;
+  }
+
+  .carousel-caption {
+    left: 0;
+    right: 0;
+    bottom: -0.75rem !important;
+  }
+  .testinomials .carousel p {
+    font-size: 14px;
+  }
+  .testinomials .carousel h3 {
+    font-size: 18px;
+  }
+}

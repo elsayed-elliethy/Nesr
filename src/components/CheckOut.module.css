@@ -1,0 +1,105 @@
+.checkout {
+  padding: 150px 0;
+}
+
+.form {
+  /* margin: 1rem 0; */
+  height: 19rem;
+  /* height: 200px; */
+
+  width: 300px;
+  max-width: 100%;
+  margin: 1rem auto;
+}
+
+.control {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.control label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  display: block;
+  text-align: left;
+  color: var(--mainColor);
+}
+
+.control input {
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.actions button {
+  font: inherit;
+  color: var(--mainColor);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: var(--mainColor);
+  color: #fff;
+}
+
+.actions .submit {
+  border: 1px solid var(--mainColor);
+  background-color: var(--mainColor);
+  color: white;
+}
+
+.actions .submit:hover,
+.actions .submit:active {
+  background-color: var(--mainColor);
+}
+
+.invalid label {
+  color: #ca3e51;
+}
+
+.invalid input {
+  border-color: #aa0b20;
+  background-color: #ffeff1;
+}
+
+.invalid input:focus {
+  border-color: #ff8800;
+  background-color: #fbe8d2;
+}
+
+.error-text {
+  color: #b40e0e;
+}
+
+button:disabled,
+button:disabled:hover,
+button:disabled:active {
+  background-color: #ccc !important;
+  color: #292929 !important;
+  border-color: #ccc !important;
+  cursor: not-allowed;
+}
+.success {
+  font-size: 20px;
+  text-align: center;
+  color: var(--mainColor);
+}
+
+.order {
+  background-color: var(--mainColor);
+  color: #fff;
+}

@@ -1,0 +1,25 @@
+.products {
+  padding-top: 100px;
+}
+
+.products .card {
+  border: 1px solid #ccc !important;
+  position: relative;
+}
+.products .card img {
+  height: 250px;
+}
+.products .card a {
+  /* display: block; */
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 767px) {
+  .buttons .btn {
+    padding: 10px 1px;
+    font-size: 12px;
+  }
+}

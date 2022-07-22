@@ -1,0 +1,10 @@
+.product img {
+  width: 400px;
+  height: 400px;
+  max-width: 100%;
+}
+
+.product-card {
+  background-color: #eee !important;
+  border-radius: 8px !important;
+}
