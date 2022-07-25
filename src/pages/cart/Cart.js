@@ -8,7 +8,9 @@ const Cart = () => {
   const CartProducts = useSelector((state) => {
     return state.manageCart.items;
   });
-
+  const login = useSelector((state) => {
+    return state.auth.isloggedIn;
+  });
   // localStorage.setItem("cartItems", JSON.stringify(CartProducts));
   const EmptyCart = () => {
     return (
@@ -89,7 +91,7 @@ const Cart = () => {
         <div className="container">
           <div className="row">
             <NavLink
-              to="/checkout"
+              to={login ? "/checkout" : "/notAuth"}
               className="btn btn-outline-dark mb-5 w-25 mx-auto"
             >
               Proceed to Checkout

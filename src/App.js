@@ -13,6 +13,7 @@ import About from "./components/about/About";
 import Contact from "./components/contact/contact";
 import Footer from "./common/footer/Footer";
 import CheckOut from "./components/CheckOut";
+import Auth from "./components/Auth/Auth";
 function App() {
   ////////////
 
@@ -70,6 +71,7 @@ function App() {
         <Route exact path="/about" component={About} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/CheckOut" component={CheckOut} />
+        <Route exact path="/notAuth" component={Auth} />
         {/* <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} /> */}
 
