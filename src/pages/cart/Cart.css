@@ -31,3 +31,12 @@
   transform: translate(-50%, -50%) !important; */
   color: #38015c;
 }
+
+.checkoutBtn {
+  width: 25% !important;
+}
+@media (max-width: 767px) {
+  .checkoutBtn {
+    width: 50% !important;
+  }
+}

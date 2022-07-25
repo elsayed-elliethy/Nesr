@@ -39,7 +39,7 @@ const Cart = () => {
     return (
       <>
         <div className="px-4 my-5 bg-light rounded-3 py-1">
-          <div className="container py-3">
+          <div className="container py-3 text-center">
             {CartProducts.map((product) => {
               return (
                 <div
@@ -89,10 +89,10 @@ const Cart = () => {
     return (
       <>
         <div className="container">
-          <div className="row">
+          <div className="row ">
             <NavLink
               to={login ? "/checkout" : "/notAuth"}
-              className="btn btn-outline-dark mb-5 w-25 mx-auto"
+              className="btn btn-outline-dark mb-5 mx-auto checkoutBtn"
             >
               Proceed to Checkout
             </NavLink>
