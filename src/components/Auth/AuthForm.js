@@ -1,10 +1,12 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import useHttp from "../../hook/use-http";
 import useInput from "../../hook/use-input";
 import { authActions } from "../../store";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import classes from "./AuthForm.module.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
+import ErrorModal from "../error/ErrorModal";
+import LoadingIndicator from "../loading/LoadingIndicator";
 
 const isEmail = (value) => {
   return value.includes("@" && ".com");
@@ -15,11 +17,11 @@ const isPass = (value) => {
 
 const AuthForm = (props) => {
   const history = useHistory();
-  const [isLogin, setIsLogin] = useState(true);
-  const [isSubmit, setIsSubmit] = useState(false);
-
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const typeLogin = queryParams.get("type") === "login";
   const switchAuthModeHandler = () => {
-    setIsLogin((prevState) => !prevState);
+    history.push("/auth?type=" + (typeLogin ? "signup" : "login"));
   };
 
   const {
@@ -29,7 +31,7 @@ const AuthForm = (props) => {
     inputChangeHandler: emailChangeHandler,
     inputBlurHandler: emailBlurHandler,
     reset: resetEmail,
-    inputClasses: emailCalsses,
+    inputClasses: emailClasses,
   } = useInput(isEmail);
 
   const {
@@ -39,7 +41,7 @@ const AuthForm = (props) => {
     inputChangeHandler: passChangeHandler,
     inputBlurHandler: passBlurHandler,
     reset: resetPass,
-    inputClasses: passCalsses,
+    inputClasses: passClasses,
   } = useInput(isPass);
 
   let formValid = false;
@@ -51,62 +53,83 @@ const AuthForm = (props) => {
 
   //////
 
-  const { isLoading, error, requestFn: signUp } = useHttp();
+  const { isLoading, error, requestFn: login, closeError } = useHttp();
+  const {
+    isLoading: load,
+    error: err,
+    requestFn: signUp,
+    closeError: closeErr,
+  } = useHttp();
+
   const submitHandler = (event) => {
     event.preventDefault();
 
     if (!formValid) {
       return;
     }
-    console.log(`Email : ${enteredEmail}`);
-    console.log(`Password : ${enteredPass}`);
     const mail = enteredEmail;
     const pass = enteredPass;
     resetEmail();
     resetPass();
 
-    let url;
-    if (isLogin) {
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDxhAYskbgPspYtcJRl0tHBdBfX_M7lugQ";
-    } else {
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDxhAYskbgPspYtcJRl0tHBdBfX_M7lugQ";
-    }
-
-    const transformData = (data) => {
-      setIsSubmit(true);
-      const expirTime = new Date(new Date().getTime() + +data.expiresIn * 1000);
-      dispatch(
-        authActions.login({ tok: data.idToken, expir: expirTime.toISOString() })
+    if (typeLogin) {
+      const transformData = (data) => {
+        const expirTime = new Date(
+          new Date().getTime() + +data.expiresIn * 1000
+        );
+        dispatch(
+          authActions.login({
+            tok: data.idToken,
+            expir: expirTime.toISOString(),
+          })
+        );
+        localStorage.setItem("token", data.idToken);
+        localStorage.setItem("expirationTime", expirTime.toISOString());
+        history.replace("/");
+      };
+      login(
+        {
+          url: "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDxhAYskbgPspYtcJRl0tHBdBfX_M7lugQ",
+          method: "POST",
+          body: {
+            email: mail,
+            password: pass,
+            returnSecureToken: true,
+          },
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+        transformData
       );
-      localStorage.setItem("token", data.idToken);
-      localStorage.setItem("expirationTime", expirTime.toISOString());
-      history.replace("/");
-    };
-    signUp(
-      {
-        url: url,
-        method: "POST",
-        body: {
-          email: mail,
-          password: pass,
-          returnSecureToken: true,
+    } else {
+      const transformData = (data) => {
+        history.push("/auth?type=login");
+      };
+      signUp(
+        {
+          url: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDxhAYskbgPspYtcJRl0tHBdBfX_M7lugQ",
+          method: "POST",
+          body: {
+            email: mail,
+            password: pass,
+            returnSecureToken: true,
+          },
+          headers: {
+            "Content-Type": "application/json",
+          },
         },
-        headers: {
-          "Content-Type": "application/json",
-        },
-      },
-      transformData
-    );
+        transformData
+      );
+    }
   };
 
   let content = (
     <Fragment>
       {" "}
-      <h1>{isLogin ? "Login" : "Sign Up"}</h1>
+      <h1>{typeLogin ? "Login" : "Sign Up"}</h1>
       <form onSubmit={submitHandler}>
-        <div className={`${classes.control} ${emailCalsses}`}>
+        <div className={`${classes.control} ${emailClasses}`}>
           <label htmlFor="email">Your Email</label>
           <input
             type="email"
@@ -120,7 +143,7 @@ const AuthForm = (props) => {
             <p className={classes["error-text"]}>Type a Valid Email</p>
           )}
         </div>
-        <div className={`${classes.control} ${passCalsses}`}>
+        <div className={`${classes.control} ${passClasses}`}>
           <label htmlFor="password">Your Password</label>
           <input
             type="password"
@@ -138,32 +161,35 @@ const AuthForm = (props) => {
         </div>
         <div className={classes.actions}>
           <button disabled={!formValid}>
-            {isLogin ? "Login" : "Create Account"}
+            {typeLogin ? "Login" : "Create Account"}
           </button>
           <button
             type="button"
             className={classes.toggle}
             onClick={switchAuthModeHandler}
           >
-            {isLogin ? "Create new account" : "Login with existing account"}
+            {typeLogin ? "Create new account" : "Login with existing account"}
           </button>
         </div>
       </form>
     </Fragment>
   );
-  if (isLoading) {
-    content = <p>Sending Request...</p>;
-  }
-  if (error) {
-    content = <p>{error}</p>;
-    history.replace("/auth");
-  }
-  if (!isLoading && !error && isSubmit) {
-    content = <p>Congratulations</p>;
+  if (isLoading || load) {
+    content = <LoadingIndicator />;
   }
 
   return (
     <div className={classes.authentication}>
+      {error && (
+        <ErrorModal onClose={closeError}>
+          Email Or Password Is Wrong.
+        </ErrorModal>
+      )}
+      {err && (
+        <ErrorModal onClose={closeErr}>
+          Email Is Already Exist Type A Different One.
+        </ErrorModal>
+      )}
       <section className={classes.auth}>{content}</section>;
     </div>
   );

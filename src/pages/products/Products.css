@@ -16,6 +16,9 @@
   left: 50%;
   transform: translateX(-50%);
 }
+.buttons .btn.active {
+  background-color: var(--mainColor) !important;
+}
 
 @media (max-width: 767px) {
   .buttons .btn {

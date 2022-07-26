@@ -44,6 +44,10 @@
 .second-footer ul i {
   font-weight: bold;
   font-size: 20px;
+  cursor: pointer;
+}
+.second-footer ul i:hover {
+  color: var(--mainColor);
 }
 
 @media (max-width: 767px) {

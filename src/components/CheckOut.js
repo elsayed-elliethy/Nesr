@@ -5,6 +5,9 @@ import useHttp from "../hook/use-http";
 import useInput from "../hook/use-input";
 import { manageCartActions } from "../store";
 import styles from "./CheckOut.module.css";
+import ErrorModal from "./error/ErrorModal";
+import LoadingIndicator from "./loading/LoadingIndicator";
+import SuccessModal from "./success/Success";
 const notEmpty = (value) => {
   return value.trim() !== "";
 };
@@ -63,7 +66,7 @@ const CheckOut = (props) => {
   const closeHandler = () => {
     history.push("/cart");
   };
-  const { isLoading, error, requestFn: checkout } = useHttp();
+  const { isLoading, error, requestFn: checkout, closeError } = useHttp();
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -170,29 +173,18 @@ const CheckOut = (props) => {
 
   if (error) {
     content = (
-      <Fragment>
-        <p>{error}</p>
-        <div className={styles.actions}>
-          <button className={styles.order} onClick={closeHandler}>
-            Close
-          </button>
-        </div>
-      </Fragment>
+      <ErrorModal onClose={closeError}>Failed To send Order.</ErrorModal>
     );
   }
+
   if (isLoading) {
-    content = <p>loading...</p>;
+    content = <LoadingIndicator />;
   }
   if (submitForm && !error && !isLoading) {
     content = (
-      <Fragment>
-        <p className={styles.success}>Your Order Has Been Sent</p>
-        <div className={styles.actions}>
-          <button className={styles.order} onClick={closeHandler}>
-            Close
-          </button>
-        </div>
-      </Fragment>
+      <SuccessModal onClose={closeHandler}>
+        Your Order Has Been Send successfully.
+      </SuccessModal>
     );
   }
 

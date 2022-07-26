@@ -73,7 +73,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div class="map">
+      <div className="map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21817567.718251098!2d39.87894209497682!3d48.12417531530424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ed8886cfadda85%3A0x72ef99e6b3fcf079!2z2KPZiNix2YjYqNin!5e0!3m2!1sar!2seg!4v1648146186993!5m2!1sar!2seg"
           width="100%"
@@ -87,38 +87,38 @@ const Contact = () => {
       <div className="container mt-5">
         <div className="row text-center">
           <div className="col-md-4">
-            <div class="srv-box">
+            <div className="srv-box">
               <h3>Office</h3>
               <span>205 North Michigan Avenue, Suite 810</span>
               <span>Chicago, 60601, USA</span>
               <span>Phone: (123) 456-7890</span>
               <span>Email: contact@Evara.com</span>
               <a href="#">
-                <i class="fa fa-map-marker"></i>View Map
+                <i className="fa fa-map-marker"></i>View Map
               </a>
             </div>
           </div>
           <div className="col-md-4">
-            <div class="srv-box">
+            <div className="srv-box">
               <h3>Shop</h3>
               <span>205 North Michigan Avenue, Suite 810</span>
               <span>Chicago, 60601, USA</span>
               <span>Phone: (123) 456-7890</span>
               <span>Email: contact@Evara.com</span>
               <a href="#">
-                <i class="fa fa-map-marker"></i>View Map
+                <i className="fa fa-map-marker"></i>View Map
               </a>
             </div>
           </div>
           <div className="col-md-4">
-            <div class="srv-box">
+            <div className="srv-box">
               <h3>Studio</h3>
               <span>205 North Michigan Avenue, Suite 810</span>
               <span>Chicago, 60601, USA</span>
               <span>Phone: (123) 456-7890</span>
               <span>Email: contact@Evara.com</span>
               <a href="#">
-                <i class="fa fa-map-marker"></i>View Map
+                <i className="fa fa-map-marker"></i>View Map
               </a>
             </div>
           </div>
@@ -132,23 +132,27 @@ const Contact = () => {
             <p>Your email address will not be published.</p>
             <form>
               <input
-                class="main-input one"
+                className="main-input one"
                 type="text"
                 placeholder="First Name"
               />
               <input
-                class="main-input one"
+                className="main-input one"
                 type="email"
                 placeholder="Your Email"
               />
               <input
-                class="main-input two"
+                className="main-input two"
                 type="text"
                 placeholder="Your Phone"
               />
-              <input class="main-input two" type="text" placeholder="Subject" />
+              <input
+                className="main-input two"
+                type="text"
+                placeholder="Subject"
+              />
               <textarea
-                class="main-input"
+                className="main-input"
                 name="Message"
                 placeholder="Message"
               ></textarea>

@@ -4,7 +4,11 @@ const useHttp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const requestFn = useCallback(async (configReq, applyData) => {
+  const closeErrorHandler = () => {
+    setError(null);
+  };
+
+  const requestFn = useCallback(async (configReq, applyData = (data) => {}) => {
     setIsLoading(true);
     setError(null);
     try {
@@ -21,7 +25,8 @@ const useHttp = () => {
       applyData(data);
     } catch (err) {
       // setError(err.message || "Something Went Wrong");
-      setError("Something Went Wrong");
+      // setError("Something Went Wrong");
+      setError(err.message);
     }
 
     setIsLoading(false);
@@ -30,6 +35,7 @@ const useHttp = () => {
     isLoading: isLoading,
     error: error,
     requestFn: requestFn,
+    closeError: closeErrorHandler,
   };
 };
 

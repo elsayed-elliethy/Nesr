@@ -40,8 +40,13 @@
     background-color: #eee;
     text-align: center;
   }
-  .buttons .btn {
-    padding: 10px 10px !important;
+  .navbar .buttons .btn {
+    padding: 10px 20px !important;
     font-size: 12px;
   }
+  /* .navbar .buttons .btn {
+    display: block;
+    width: 25%;
+    margin: auto;
+  } */
 }

@@ -45,7 +45,9 @@
   color: var(--mainColor) !important;
   border-color: var(--mainColor) !important;
 }
-.btn:hover {
+.btn:hover,
+.btn:active,
+.btn.active {
   color: #fff !important;
   background-color: var(--mainColor) !important;
 }

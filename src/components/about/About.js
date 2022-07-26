@@ -143,40 +143,40 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div class="static">
-        <div class="container">
-          <div class="row">
+      <div className="static">
+        <div className="container">
+          <div className="row">
             <div className="col-md-3">
               <div className="static-box ">
-                <span class="number">8+</span>
-                <span class="title">Glorious years</span>
+                <span className="number">8+</span>
+                <span className="title">Glorious years</span>
               </div>
             </div>
             <div className="col-md-3">
               <div className="static-box ">
-                <span class="number">12+</span>
-                <span class="title">Happy clients</span>
+                <span className="number">12+</span>
+                <span className="title">Happy clients</span>
               </div>
             </div>
             <div className="col-md-3">
               <div className="static-box ">
-                <span class="number">57+</span>
-                <span class="title">Projects complete</span>
+                <span className="number">57+</span>
+                <span className="title">Projects complete</span>
               </div>
             </div>
             <div className="col-md-3">
               <div className="static-box ">
-                <span class="number">24+</span>
-                <span class="title">Team advisor</span>
+                <span className="number">24+</span>
+                <span className="title">Team advisor</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="team">
-        <div class="container text-center">
+      <div className="team">
+        <div className="container text-center">
           <h2 className="text-center my-5 fw-bold">Our Team</h2>
-          <div class="row">
+          <div className="row">
             <div className="col-lg-4 my-4">
               <div className="team-box">
                 <h5 className="mb-4">Meet Our Expert Team</h5>

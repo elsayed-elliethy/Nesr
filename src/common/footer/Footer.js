@@ -100,27 +100,27 @@ const Footer = () => {
           <ul>
             <li>
               <a>
-                <i class="fa fa-facebook"></i>
+                <i className="fa fa-facebook"></i>
               </a>
             </li>
             <li>
               <a>
-                <i class="fa fa-twitter"></i>
+                <i className="fa fa-twitter"></i>
               </a>
             </li>
             <li>
               <a>
-                <i class="fa fa-instagram"></i>
+                <i className="fa fa-instagram"></i>
               </a>
             </li>
             <li>
               <a>
-                <i class="fa fa-youtube"></i>
+                <i className="fa fa-youtube"></i>
               </a>
             </li>
             <li>
               <a>
-                <i class="fa fa-whatsapp"></i>
+                <i className="fa fa-whatsapp"></i>
               </a>
             </li>
           </ul>

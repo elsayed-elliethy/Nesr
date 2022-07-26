@@ -68,7 +68,10 @@ function Navbar() {
             </ul>
             <div className="buttons">
               {!login && (
-                <NavLink to="/auth" className="btn btn-outline-dark me-2">
+                <NavLink
+                  to="/auth?type=login"
+                  className="btn btn-outline-dark me-2"
+                >
                   <i className="fa fa-sign-in me-1"></i>
                   Login
                 </NavLink>

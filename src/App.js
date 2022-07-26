@@ -6,14 +6,15 @@ import Home from "./components/home/Home";
 import Products from "./pages/products/Products";
 import Product from "./pages/Product";
 import Cart from "./pages/cart/Cart";
-import { authActions } from "./store";
-import { useDispatch, useSelector } from "react-redux";
 import AuthPage from "./pages/AuthPage";
 import About from "./components/about/About";
 import Contact from "./components/contact/contact";
 import Footer from "./common/footer/Footer";
 import CheckOut from "./components/CheckOut";
 import Auth from "./components/Auth/Auth";
+import { authActions } from "./store";
+import { useDispatch, useSelector } from "react-redux";
+
 function App() {
   ////////////
 
@@ -42,7 +43,6 @@ function App() {
     return remainDuration;
   };
   const remainingTime = calculationRemainingTime(expirT);
-  console.log(remainingTime, "aaa");
   useEffect(
     () => {
       if (login) {
@@ -72,9 +72,6 @@ function App() {
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/CheckOut" component={CheckOut} />
         <Route exact path="/notAuth" component={Auth} />
-        {/* <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} /> */}
-
         {!login && (
           <Route path="/auth">
             <AuthPage />

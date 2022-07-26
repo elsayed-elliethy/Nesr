@@ -8,20 +8,15 @@ import { manageCartActions } from "../store";
 import "./Product.css";
 function Product() {
   const params = useParams();
-  console.log(params);
-
   // /////////////
   const [product, setProduct] = useState({});
 
   const { isLoading, error, requestFn: getProducts } = useHttp();
 
   const { productId } = params;
-  console.log(productId);
   useEffect(() => {
     const transformProducts = (data) => {
-      // console.log(typeof data);
       let loadedProduct = {};
-      console.log(data);
 
       Object.entries(data).map(([key, value]) => {
         if (key === productId) {
@@ -46,8 +41,7 @@ function Product() {
       },
       transformProducts
     );
-  }, [getProducts]);
-  console.log(product, "ttt");
+  }, [getProducts, productId]);
   ///////////
 
   ///////////
@@ -77,12 +71,7 @@ function Product() {
   /////////////////////
   const dispatch = useDispatch();
   const addProductHandler = (item) => {
-    // console.log({ val: product });
     dispatch(manageCartActions.addProduct({ val: item }));
-    // localStorage.setItem(
-    //   "cartItems",
-    //   JSON.stringify((prev) => [...prev, item])
-    // );
   };
 
   /////////////////////
@@ -130,10 +119,7 @@ function Product() {
     );
   };
   return (
-    <div className="products">
-      {/* <h2 className="text-center my-5 fw-bold">Latest Products</h2> */}
-      {isLoading ? <Loading /> : <ShowProducts />}
-    </div>
+    <div className="products">{isLoading ? <Loading /> : <ShowProducts />}</div>
   );
 }
 

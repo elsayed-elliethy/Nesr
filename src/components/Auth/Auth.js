@@ -12,7 +12,7 @@ const Auth = (props) => {
       <h2>You are not authenticated!</h2>
       <p>Please log in to continue.</p>
       {/* <button onClick={loginHandler}>Log In</button> */}
-      <NavLink to="/auth" className="btn btn-outline-dark me-2">
+      <NavLink to="/auth?type=login" className="btn btn-outline-dark me-2">
         Login
       </NavLink>
       {/* </Card> */}
