@@ -1,11 +1,10 @@
 {
   "files": {
-    "main.css": "/Nesr/static/css/main.7328b5d8.css",
-    "main.js": "/Nesr/static/js/main.7c03300e.js",
+    "main.css": "/Nesr/static/css/main.55a9d19c.css",
+    "main.js": "/Nesr/static/js/main.0d73c6af.js",
     "static/js/787.46493d11.chunk.js": "/Nesr/static/js/787.46493d11.chunk.js",
     "static/media/about-9.png": "/Nesr/static/media/about-9.ac1bf3fa3aafd36991b3.png",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/Nesr/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
-    "static/media/phones.jpg": "/Nesr/static/media/phones.65839a38efe3d2537711.jpg",
     "static/media/fontawesome-webfont.eot": "/Nesr/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont.ttf?v=4.7.0": "/Nesr/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
     "static/media/contact-2.png": "/Nesr/static/media/contact-2.b8bc31394983bdddecad.png",
@@ -14,8 +13,12 @@
     "static/media/about-6.png": "/Nesr/static/media/about-6.370e998a5720a8f77ca6.png",
     "static/media/about-8.png": "/Nesr/static/media/about-8.0f06832c1b5941e9e5bf.png",
     "static/media/fontawesome-webfont.woff?v=4.7.0": "/Nesr/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/1.png": "/Nesr/static/media/1.32e67c89aac66b2bdd01.png",
+    "static/media/2.jpg": "/Nesr/static/media/2.ce75a014de4ae71f5cef.jpg",
     "static/media/fontawesome-webfont.woff2?v=4.7.0": "/Nesr/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
-    "static/media/modal-background.svg": "/Nesr/static/media/modal-background.e7e9176e3842bd2030fa02badbbb2a24.svg",
+    "static/media/5.jpg": "/Nesr/static/media/5.821bf761fcaef13ac233.jpg",
+    "static/media/3.jpg": "/Nesr/static/media/3.16609533c0b270921c42.jpg",
+    "static/media/4.jpg": "/Nesr/static/media/4.bc2d623da017941d53b1.jpg",
     "static/media/logo.jpg": "/Nesr/static/media/logo.9126206ff784c2e07039.jpg",
     "static/media/icon-2.svg": "/Nesr/static/media/icon-2.622b96aa8375916171721496261f6986.svg",
     "static/media/icon-6.svg": "/Nesr/static/media/icon-6.52cd022b53f13b12f573a0dd57fc804e.svg",
@@ -25,12 +28,12 @@
     "static/media/icon-3.svg": "/Nesr/static/media/icon-3.a41b48d5c6678b96129a842057548c86.svg",
     "static/media/images.jfif": "/Nesr/static/media/images.7a43ad9ab67319119979.jfif",
     "index.html": "/Nesr/index.html",
-    "main.7328b5d8.css.map": "/Nesr/static/css/main.7328b5d8.css.map",
-    "main.7c03300e.js.map": "/Nesr/static/js/main.7c03300e.js.map",
+    "main.55a9d19c.css.map": "/Nesr/static/css/main.55a9d19c.css.map",
+    "main.0d73c6af.js.map": "/Nesr/static/js/main.0d73c6af.js.map",
     "787.46493d11.chunk.js.map": "/Nesr/static/js/787.46493d11.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7328b5d8.css",
-    "static/js/main.7c03300e.js"
+    "static/css/main.55a9d19c.css",
+    "static/js/main.0d73c6af.js"
   ]
 }
