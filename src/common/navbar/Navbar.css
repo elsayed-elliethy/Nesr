@@ -5,7 +5,6 @@
   left: 0 !important;
   width: 100%;
   z-index: 20;
-  /* background-color: #eee !important; */
 }
 .navbar img {
   width: 100px !important;
@@ -31,9 +30,6 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out;
 }
-/* .navbar-nav .nav-link.active {
-  color: red;
-} */
 
 @media (max-width: 767px) {
   .navbar-collapse {
@@ -44,9 +40,4 @@
     padding: 10px 20px !important;
     font-size: 12px;
   }
-  /* .navbar .buttons .btn {
-    display: block;
-    width: 25%;
-    margin: auto;
-  } */
 }

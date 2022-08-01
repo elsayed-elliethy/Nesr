@@ -7,40 +7,7 @@ const Testimonials = () => {
   return (
     <div className="testinomials">
       <h2>Testimonials</h2>
-      {/* <Carousel>
-        <Carousel.Item>
-          <img src={girlImg} alt="First slide" />
-          <Carousel.Caption>
-            <p>
-              "Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated
-              they live."
-            </p>
-            <h3>Simab Dave - Web Designer</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={boyImg} alt="second slide" />
-          <Carousel.Caption>
-            <p>
-              "Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated
-              they live far from the countries Vokalia."
-            </p>
-            <h3>Johnthan Doe - UX Designer</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img src={girlImg} alt="third slide" />
-          <Carousel.Caption>
-            <p>
-              "Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. "
-            </p>
-            <h3>Maccy Doe - Front End</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel> */}
+
       <div
         id="carouselExampleCaptions"
         className="carousel slide"

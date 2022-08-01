@@ -66,16 +66,18 @@ function Products() {
 
   ////
 
-  const filterHandler = (event) => {
+  const [isActive, setIsActive] = useState("all");
+  const filterHandler = (catId) => {
     let updatedList = [];
-    if (event.target.id === "all") {
+    if (catId === "all") {
       updatedList = avilableProducts;
     } else {
       updatedList = avilableProducts.filter((ele) => {
-        return ele.category === event.target.id;
+        return ele.category === catId;
       });
     }
     setFilter(updatedList);
+    setIsActive(catId);
   };
 
   ///
@@ -87,37 +89,57 @@ function Products() {
             <div className="col-md-12">
               <div className="buttons d-flex justify-content-center mw-100">
                 <button
-                  className="btn btn-outline-dark me-2"
+                  className={
+                    isActive === "all"
+                      ? "btn btn-outline-dark active me-2"
+                      : "btn btn-outline-dark me-2"
+                  }
                   id="all"
-                  onClick={filterHandler}
+                  onClick={(e) => filterHandler(e.target.id)}
                 >
                   All
                 </button>
                 <button
-                  className="btn btn-outline-dark me-2"
+                  className={
+                    isActive === "men's clothing"
+                      ? "btn btn-outline-dark active me-2"
+                      : "btn btn-outline-dark me-2"
+                  }
                   id="men's clothing"
-                  onClick={filterHandler}
+                  onClick={(e) => filterHandler(e.target.id)}
                 >
                   Men's Clothing
                 </button>
                 <button
-                  className="btn btn-outline-dark me-2"
+                  className={
+                    isActive === "women's clothing"
+                      ? "btn btn-outline-dark active me-2"
+                      : "btn btn-outline-dark me-2"
+                  }
                   id="women's clothing"
-                  onClick={filterHandler}
+                  onClick={(e) => filterHandler(e.target.id)}
                 >
                   Woman's Clothing
                 </button>
                 <button
-                  className="btn btn-outline-dark me-2"
+                  className={
+                    isActive === "jewelery"
+                      ? "btn btn-outline-dark active me-2"
+                      : "btn btn-outline-dark me-2"
+                  }
                   id="jewelery"
-                  onClick={filterHandler}
+                  onClick={(e) => filterHandler(e.target.id)}
                 >
                   Jewelery
                 </button>
                 <button
-                  className="btn btn-outline-dark me-2"
+                  className={
+                    isActive === "electronics"
+                      ? "btn btn-outline-dark active me-2"
+                      : "btn btn-outline-dark me-2"
+                  }
                   id="electronics"
-                  onClick={filterHandler}
+                  onClick={(e) => filterHandler(e.target.id)}
                 >
                   Electronic
                 </button>
@@ -162,6 +184,15 @@ function Products() {
   };
   return (
     <div className="products">
+      <div className="card bg-dark products-card text-white border-0">
+        <img src={homeImg} className="card-img h-100 w-100" alt="..." />
+        <div className="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+          <h5 className="card-title display-5 fw-bolder mb-0">Products</h5>
+          <p className="card-text lead fs-2 text-center">
+            Browse Our Latest Products
+          </p>
+        </div>
+      </div>
       <h2 className="text-center my-5 fw-bold">Latest Products</h2>
       {error && (
         <ErrorModal onClose={closeError}>Failed To Fetch Products.</ErrorModal>

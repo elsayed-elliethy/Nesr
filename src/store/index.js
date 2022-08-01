@@ -59,9 +59,6 @@ const manageCartSlice = createSlice({
       const newItem = action.payload.val;
 
       const existingItem = state.items.find((item) => item.id === newItem.id);
-
-      console.log(newItem, "kkkkk");
-      console.log(existingItem, "ggg");
       state.totalAmount = +state.totalAmount + 1;
       let updatedArray;
       if (existingItem) {
@@ -104,14 +101,35 @@ const manageCartSlice = createSlice({
   },
 });
 
+/////////
+const inetialShowBullets =
+  localStorage.getItem("Show-Bullets") === "yes" ||
+  !localStorage.getItem("Show-Bullets")
+    ? true
+    : false;
+const showBulletsSlice = createSlice({
+  name: "showBullets",
+  initialState: { show: inetialShowBullets },
+  reducers: {
+    showBullets(state, action) {
+      state.show = true;
+    },
+    hideBullets(state, action) {
+      state.show = false;
+    },
+  },
+});
+
 const store = configureStore({
   reducer: {
     auth: authSlice.reducer,
     showCart: showCartSlice.reducer,
     manageCart: manageCartSlice.reducer,
+    showBullets: showBulletsSlice.reducer,
   },
 });
 export const authActions = authSlice.actions;
 export const showCartActions = showCartSlice.actions;
 export const manageCartActions = manageCartSlice.actions;
+export const showBulletsActions = showBulletsSlice.actions;
 export default store;

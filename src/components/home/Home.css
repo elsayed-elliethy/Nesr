@@ -25,3 +25,97 @@
 .card-img-overlay {
   color: var(--mainColor) !important;
 }
+
+/* //////// */
+.home-products h2 {
+  color: var(--mainColor);
+  text-transform: capitalize;
+  position: relative;
+  width: fit-content;
+}
+.home-products h2:after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 5px;
+
+  background-color: var(--mainColor);
+}
+.home-products .card {
+  border: 1px solid #ccc !important;
+  position: relative;
+}
+.home-products .card img {
+  height: 250px;
+}
+.home-products .card a {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.buttons .btn.active {
+  background-color: var(--mainColor) !important;
+}
+
+@media (max-width: 767px) {
+  .buttons .btn {
+    padding: 10px 1px !important;
+    font-size: 12px;
+  }
+  .home-products h2 {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* start bullets */
+.bullets {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  z-index: 20;
+}
+.bullets .bullet {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--mainColor);
+  border-radius: 50%;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.bullets .bullet .bullet-tooltip {
+  width: 150px;
+  padding: 10px 0;
+  background-color: var(--mainColor);
+  position: relative;
+  left: -165px;
+  top: -14px;
+  color: #fff;
+  text-align: center;
+  display: none;
+  cursor: default;
+  pointer-events: none;
+}
+.bullets .bullet .bullet-tooltip::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border: 10px solid;
+  border-color: transparent transparent transparent var(--mainColor);
+}
+.bullets .bullet:hover .bullet-tooltip {
+  display: block;
+}
+.bullet.active {
+  background-color: var(--mainColor);
+}
+/* end bullets */

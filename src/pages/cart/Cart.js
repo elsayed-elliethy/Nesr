@@ -11,7 +11,6 @@ const Cart = () => {
   const login = useSelector((state) => {
     return state.auth.isloggedIn;
   });
-  // localStorage.setItem("cartItems", JSON.stringify(CartProducts));
   const EmptyCart = () => {
     return (
       <div className="px-4 my-5 bg-light rounded-3 py-5">
@@ -63,7 +62,6 @@ const Cart = () => {
                     <button
                       className="btn btn-outline-dark me-3"
                       id={product.id}
-                      //   onClick={removeProductHandler}
                       onClick={() => removeProductHandler(product)}
                     >
                       <i className="fa fa-minus"></i>
@@ -71,7 +69,6 @@ const Cart = () => {
                     <button
                       className="btn btn-outline-dark"
                       id={product.id}
-                      //   onClick={addProductHandler}
                       onClick={() => addProductHandler(product)}
                     >
                       <i className="fa fa-plus"></i>

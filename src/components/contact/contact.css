@@ -22,9 +22,6 @@
 }
 
 .card-img-overlay {
-  /* top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important; */
   color: var(--mainColor);
 }
 
@@ -77,7 +74,6 @@
 }
 
 .srv-box a:hover {
-  /* background-color: var(--hover-heading); */
   transform: translateY(-3px);
 }
 
@@ -131,10 +127,10 @@ textarea {
   border-radius: 15px;
 }
 input[type="submit"] {
-  border: none;
+  border: 3px solid var(--mainColor);
   border-radius: 6px;
-  background-color: #38015c;
-  padding: 20px 30px;
+  background-color: var(--mainColor);
+  padding: 15px 30px;
   font-size: 17px;
   font-weight: 500;
   color: white;
@@ -143,7 +139,9 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #8f16e0;
+  background-color: #fff;
+  color: var(--heading-Color);
+  border: 3px solid var(--mainColor);
 }
 
 @media (max-width: 767px) {

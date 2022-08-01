@@ -14,6 +14,7 @@ import CheckOut from "./components/CheckOut";
 import Auth from "./components/Auth/Auth";
 import { authActions } from "./store";
 import { useDispatch, useSelector } from "react-redux";
+import Setting from "./common/setting/Setting";
 
 function App() {
   ////////////
@@ -62,7 +63,7 @@ function App() {
   return (
     <Fragment>
       <Navbar />
-
+      <Setting />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/products" component={Products} />

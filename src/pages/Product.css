@@ -3,6 +3,9 @@
   height: 400px;
   max-width: 100%;
 }
+.product .price {
+  color: var(--mainColor);
+}
 
 .product-card {
   background-color: #eee !important;
