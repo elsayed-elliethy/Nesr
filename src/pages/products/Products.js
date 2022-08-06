@@ -1,10 +1,12 @@
 import React, { Fragment, useEffect, useReducer, useState } from "react";
 import "./Products.css";
 import useHttp from "../../hook/use-http";
-import Skeleton from "react-loading-skeleton";
+// import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
 import homeImg from "../../assets/images.jfif";
 import ErrorModal from "../../components/error/ErrorModal";
+import Skeleton from "../../components/skeleton/Skeleton";
+import Categories from "../../components/category/Categories";
 function Products() {
   // /////////////
 
@@ -47,16 +49,16 @@ function Products() {
         <div className="container my-5 py-5 text-center">
           <div className="row d-flex justify-content-center">
             <div className="col-md-3 mb-3 px-2">
-              <Skeleton height={350} />
+              {/* <Skeleton height={350} /> */}
             </div>
             <div className="col-md-3 mb-3 px-2">
-              <Skeleton height={350} />
+              {/* <Skeleton height={350} /> */}
             </div>
             <div className="col-md-3 mb-3 px-2">
-              <Skeleton height={350} />
+              {/* <Skeleton height={350} /> */}
             </div>
             <div className="col-md-3 mb-3 px-2">
-              <Skeleton height={350} />
+              {/* <Skeleton height={350} /> */}
             </div>
           </div>
         </div>
@@ -84,7 +86,7 @@ function Products() {
   const ShowProducts = () => {
     return (
       <Fragment>
-        <div className="container">
+        {/* <div className="container">
           <div className="row">
             <div className="col-md-12">
               <div className="buttons d-flex justify-content-center mw-100">
@@ -146,13 +148,82 @@ function Products() {
               </div>
             </div>
           </div>
+        </div> */}
+        <div className="container cats-row">
+          <div className="row mx-auto ">
+            {/* <div className="col-md-0 col-lg-0 cats-col text-center">
+              <button
+                className={
+                  isActive === "all"
+                    ? "btn btn-outline-dark active w-25"
+                    : "btn btn-outline-dark  "
+                }
+                id="all"
+                onClick={(e) => filterHandler(e.target.id)}
+              >
+                All
+              </button>
+            </div> */}
+            <div className="col-md-6 col-lg-3 cats-col">
+              <button
+                className={
+                  isActive === "men's clothing"
+                    ? "btn btn-outline-dark active w-100"
+                    : "btn btn-outline-dark w-100"
+                }
+                id="men's clothing"
+                onClick={(e) => filterHandler(e.target.id)}
+              >
+                Men's Clothing
+              </button>
+            </div>
+            <div className="col-md-6 col-lg-3 cats-col">
+              <button
+                className={
+                  isActive === "women's clothing"
+                    ? "btn btn-outline-dark active w-100"
+                    : "btn btn-outline-dark w-100"
+                }
+                id="women's clothing"
+                onClick={(e) => filterHandler(e.target.id)}
+              >
+                Woman's Clothing
+              </button>
+            </div>
+            <div className="col-md-6 col-lg-3 cats-col">
+              <button
+                className={
+                  isActive === "jewelery"
+                    ? "btn btn-outline-dark active w-100"
+                    : "btn btn-outline-dark w-100"
+                }
+                id="jewelery"
+                onClick={(e) => filterHandler(e.target.id)}
+              >
+                Jewelery
+              </button>
+            </div>
+            <div className="col-md-6 col-lg-3 cats-col">
+              <button
+                className={
+                  isActive === "electronics"
+                    ? "btn btn-outline-dark active w-100"
+                    : "btn btn-outline-dark w-100"
+                }
+                id="electronics"
+                onClick={(e) => filterHandler(e.target.id)}
+              >
+                Electronic
+              </button>
+            </div>
+          </div>
         </div>
 
         <div className="container my-5 py-5 text-center">
           <div className="row d-flex justify-content-center">
             {filter.map((product) => {
               return (
-                <div className="col-md-3 mb-3 px-2" key={product.id}>
+                <div className="col-md-6 col-lg-3 mb-3 px-2" key={product.id}>
                   <div className="card h-100 text-center py-4 px-1 product-card">
                     <img
                       src={product.image}
@@ -197,7 +268,8 @@ function Products() {
       {error && (
         <ErrorModal onClose={closeError}>Failed To Fetch Products.</ErrorModal>
       )}
-      {isLoading ? <Loading /> : <ShowProducts />}
+      {isLoading ? <Skeleton type="products" count={8} /> : <ShowProducts />}
+      {/* <Skeleton type="products" count={8} /> */}
     </div>
   );
 }

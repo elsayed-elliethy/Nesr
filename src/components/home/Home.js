@@ -10,6 +10,7 @@ import Subscribe from "../subscribe/Subscribe";
 import useHttp from "../../hook/use-http";
 import { NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux/es/exports";
+import Header from "../header/Header";
 const Home = () => {
   /////change background
   let backgroundImgs = [img1, img2, img3, img4, img5];
@@ -20,7 +21,7 @@ const Home = () => {
     setIndex(randomNumber);
   }, [backgroundImgs.length]);
   useEffect(() => {
-    let counter = setInterval(changeBackground, 10000);
+    let counter = setInterval(changeBackground, 10000000000);
     return () => clearInterval(counter);
   }, [changeBackground]);
   //////
@@ -114,7 +115,10 @@ const Home = () => {
               <div className="row d-flex justify-content-center">
                 {ele.relativeProducts.map((product) => {
                   return (
-                    <div className="col-md-3 mb-3 px-2" key={product.id}>
+                    <div
+                      className="col-md-6 col-lg-3 mb-3 px-2"
+                      key={product.id}
+                    >
                       <div className="card h-100 text-center py-4 px-1 product-card">
                         <img
                           src={product.image}
@@ -168,7 +172,7 @@ const Home = () => {
       setActiveId(id);
     };
     return (
-      <div className="bullets">
+      <div className="bullets d-none d-md-block">
         {bullets.map((bullet) => {
           return (
             <div
@@ -186,24 +190,9 @@ const Home = () => {
 
   return (
     <div className="home">
-      <div className="card home-card bg-dark text-white border-0">
-        <img
-          src={backgroundImgs[index]}
-          className="card-img h-100 w-100"
-          alt="..."
-        />
-        <div className="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-          <h5 className="card-title display-5 fw-bolder mb-0">
-            New Season Arrivals
-          </h5>
-          <p className="card-text lead fs-2 text-center">
-            Check Out All The Trends
-          </p>
-        </div>
-      </div>
-
-      {showBullets && <BulletsSection />}
+      <Header />
       <FilteredProducts />
+      {showBullets && <BulletsSection />}
       <Testimonials />
       <Subscribe />
     </div>

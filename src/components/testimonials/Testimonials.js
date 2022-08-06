@@ -10,15 +10,15 @@ const Testimonials = () => {
 
       <div
         id="carouselExampleCaptions"
-        className="carousel slide"
-        data-bs-ride="false"
+        class="carousel slide parent"
+        data-bs-ride="carousel"
       >
-        <div className="carousel-indicators">
+        <div class="carousel-indicators">
           <button
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="0"
-            className="active"
+            class="active"
             aria-current="true"
             aria-label="Slide 1"
           ></button>
@@ -35,63 +35,58 @@ const Testimonials = () => {
             aria-label="Slide 3"
           ></button>
         </div>
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src={girlImg} alt="First slide" />
-            <div className="carousel-caption d-md-block">
+        <div class="carousel-inner">
+          <div class="carousel-item active testi-item">
+            <img src={girlImg} class="d-block" alt="..." />
+            <div class="carousel-caption ">
               <p>
                 "Far far away, behind the word mountains, far from the countries
                 Vokalia and Consonantia, there live the blind texts. Separated
                 they live."
               </p>
-              <h3>Simab Dave - Web Designer</h3>
+              <h5>Simab Dave - Web Designer</h5>
             </div>
           </div>
-          <div className="carousel-item">
-            <img src={boyImg} alt="second slide" />
-            <div className="carousel-caption  d-md-block">
+          <div class="carousel-item testi-item">
+            <img src={boyImg} class="d-block " alt="..." />
+            <div class="carousel-caption ">
               <p>
                 "Far far away, behind the word mountains, far from the countries
                 Vokalia and Consonantia, there live the blind texts. Separated
-                they live far from the countries Vokalia."
+                they live."
               </p>
-              <h3>Johnthan Doe - UX Designer</h3>
+              <h5>Johnthan Doe - UX Designer</h5>
             </div>
           </div>
-          <div className="carousel-item">
-            <img src={girlImg} alt="First slide" />
-            <div className="carousel-caption  d-md-block">
+          <div class="carousel-item testi-item">
+            <img src={girlImg} class="d-block" alt="..." />
+            <div class="carousel-caption ">
               <p>
                 "Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts. "
+                Vokalia and Consonantia, there live the blind texts. Separated
+                they live."
               </p>
-              <h3>Maccy Doe - Front End</h3>
+              <h5>Maccy Doe - Front End</h5>
             </div>
           </div>
         </div>
         <button
-          className="carousel-control-prev"
+          class="carousel-control-prev d-none d-md-block"
           type="button"
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="prev"
         >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
         </button>
         <button
-          className="carousel-control-next"
+          class="carousel-control-next d-none d-md-block"
           type="button"
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="next"
         >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden ">Next</span>
         </button>
       </div>
     </div>

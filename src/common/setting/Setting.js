@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux/es/exports";
 import { showBulletsActions } from "../../store";
 import "./Setting.css";
+
 const Setting = (props) => {
+  // localStorage.clear();
   ////////show and hide settings///////
   const [settingClasses, setSettingClasses] = useState(
     "settings hide-settings"
@@ -19,6 +21,7 @@ const Setting = (props) => {
       setGearClasses("fa fa-gear settings-gear");
     }
   };
+
   /////////////
 
   const colors = [
@@ -28,8 +31,10 @@ const Setting = (props) => {
     { id: 4, color: "#ff9800" },
     { id: 5, color: "#4caf50" },
   ];
-
-  let selectedColor = JSON.parse(localStorage.getItem("color"));
+  let selectedColor;
+  if (typeof localStorage.getItem("color") !== "undefined") {
+    selectedColor = JSON.parse(localStorage.getItem("color"));
+  }
   let currentIndex = selectedColor
     ? colors.findIndex((ele) => ele.id === selectedColor.id)
     : 0;
@@ -60,6 +65,7 @@ const Setting = (props) => {
       return "";
     }
   };
+
   const inetialActive =
     localStorage.getItem("Show-Bullets") === "yes" ||
     !localStorage.getItem("Show-Bullets")
@@ -83,10 +89,14 @@ const Setting = (props) => {
     localStorage.removeItem("color");
     window.location.reload();
   };
+
   ////////////////
   return (
     <div className={settingClasses}>
-      <div className="toggle-settings" onClick={openSettingHandler}>
+      <div
+        className="toggle-settings d-none d-md-block"
+        onClick={openSettingHandler}
+      >
         <i className={gearClasses}></i>
       </div>
       <div className="settings-container">

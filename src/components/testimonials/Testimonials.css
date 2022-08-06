@@ -1,5 +1,4 @@
 .testinomials {
-  margin-top: 100px;
   height: 600px;
   background-color: var(--mainColor);
   color: #fff;
@@ -9,88 +8,84 @@
 }
 .testinomials h2 {
   font-weight: bold;
+  color: #fff;
 }
-.testinomials .carousel {
+
+.testinomials .carousel-item {
+  height: 400px !important;
+  position: relative;
+}
+.testinomials .carousel-inner {
+  position: relative;
+  top: 50px !important;
   background-color: #fff;
-  width: 80%;
-  height: 300px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 12px;
+  width: 70%;
+  max-width: 100%;
+  height: 300px !important;
+
+  max-height: 100%;
+  margin: auto;
+  border-radius: 15px;
 }
 .testinomials .carousel-caption {
+  left: 50% !important;
+  top: 60%;
+  transform: translate(-50%, -60%);
+  width: 100%;
+  margin: auto;
+  padding: 0 20px;
 }
-
-.testinomials .carousel img {
-  width: 100px;
+.testinomials .carousel-caption h5 {
+  color: var(--mainColor) !important;
+}
+.testinomials .carousel-caption p {
+  color: #444 !important;
+  width: 100% !important;
   max-width: 100%;
-  border-radius: 50%;
-  margin-top: 30px;
-  margin-bottom: 220px;
-}
-.testinomials .carousel p {
-  color: #555;
   font-size: 20px;
-  line-height: 1.6;
+  line-height: normal;
 }
-.testinomials .carousel h3 {
-  color: var(--mainColor);
-  margin-bottom: 30px;
+.testinomials .carousel-item img {
+  width: 100px !important;
+  max-width: 100% !important;
+  height: 100px !important;
+  max-height: 100% !important;
+  margin: 20px auto;
+  border-radius: 50%;
 }
-
-.carousel-indicators {
-  position: absolute;
-  right: 0;
-  bottom: -70px !important;
-  left: 0;
-  z-index: 15;
-  display: flex;
-  justify-content: center;
-  padding-left: 0;
-  margin-right: 15%;
-  margin-left: 15%;
-  list-style: none;
-}
-
-.carousel-indicators button {
-  width: 15px !important;
-  height: 15px !important;
-  border-radius: 50% !important;
-  border: none;
-  margin-left: 10px;
-  background-color: #b9576d;
-}
-.carousel-indicators button.active {
-  background-color: #fff;
-}
-.carousel-control-prev,
-.carousel-control-next {
+.testinomials .carousel-control-next,
+.testinomials .carousel-control-prev {
   display: none !important;
 }
-@media (max-width: 991px) {
-  .testinomials .carousel p {
-    font-size: 16px;
-  }
-  .testinomials .carousel h3 {
-    font-size: 25px;
-  }
+
+.testinomials .carousel-indicators {
+  bottom: -50% !important;
 }
+.testinomials .carousel-indicators button {
+  opacity: 0.5;
+  background-color: #fff !important;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.testinomials .carousel-indicators button.active {
+  opacity: 1 !important;
+}
+
+.testinomials .carousel-indicators button.active {
+  background-color: var(--mainColor);
+}
+
 @media (max-width: 767px) {
-  .testinomials .carousel {
-    height: 350px;
+  .testinomials .carousel-caption h5 {
+    margin-top: 20px;
+  }
+  .testinomials .carousel-caption {
+    margin-top: 0;
   }
 
-  .carousel-caption {
-    left: 0;
-    right: 0;
-    bottom: -0.75rem !important;
-  }
-  .testinomials .carousel p {
-    font-size: 14px;
-  }
-  .testinomials .carousel h3 {
-    font-size: 18px;
+  .testinomials .carousel-inner {
+    width: 90%;
+    height: 320px !important;
   }
 }

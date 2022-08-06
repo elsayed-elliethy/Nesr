@@ -1,9 +1,10 @@
 import React, { Fragment, useEffect, useState } from "react";
-import Skeleton from "react-loading-skeleton";
+// import Skeleton from "react-loading-skeleton";
 import { useDispatch } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import useHttp from "../hook/use-http";
 import { manageCartActions } from "../store";
+import Skeleton from "../components/skeleton/Skeleton";
 
 import "./Product.css";
 function Product() {
@@ -45,28 +46,28 @@ function Product() {
   ///////////
 
   ///////////
-  const Loading = () => {
-    return (
-      <Fragment>
-        <div className="container my-5 py-5 text-center">
-          <div className="row d-flex justify-content-center">
-            <div className="col-lg-6 mb-sm-5">
-              <Skeleton height={400} />
-            </div>
-            <div className="col-md-6" style={{ lineHeight: 2 }}>
-              <Skeleton height={50} width={300} />
-              <Skeleton height={75} />
-              <Skeleton height={25} width={150} />
-              <Skeleton height={50} />
-              <Skeleton height={150} />
-              <Skeleton height={50} width={100} />
-              <Skeleton height={50} width={100} />
-            </div>
-          </div>
-        </div>
-      </Fragment>
-    );
-  };
+  // const Loading = () => {
+  //   return (
+  //     <Fragment>
+  //       <div className="container my-5 py-5 text-center">
+  //         <div className="row d-flex justify-content-center">
+  //           <div className="col-lg-6 mb-sm-5">
+  //             <Skeleton height={400} />
+  //           </div>
+  //           <div className="col-md-6" style={{ lineHeight: 2 }}>
+  //             <Skeleton height={50} width={300} />
+  //             <Skeleton height={75} />
+  //             <Skeleton height={25} width={150} />
+  //             <Skeleton height={50} />
+  //             <Skeleton height={150} />
+  //             <Skeleton height={50} width={100} />
+  //             <Skeleton height={50} width={100} />
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </Fragment>
+  //   );
+  // };
 
   /////////////////////
   const dispatch = useDispatch();
@@ -121,7 +122,11 @@ function Product() {
     );
   };
   return (
-    <div className="products">{isLoading ? <Loading /> : <ShowProducts />}</div>
+    <div className="products">
+      {isLoading ? <Skeleton type={"product"} count={1} /> : <ShowProducts />}
+
+      {/* <Skeleton type={"product"} count={1} /> */}
+    </div>
   );
 }
 

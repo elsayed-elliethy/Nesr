@@ -16,9 +16,8 @@ import { authActions } from "./store";
 import { useDispatch, useSelector } from "react-redux";
 import Setting from "./common/setting/Setting";
 
-function App() {
+const App = () => {
   ////////////
-
   const login = useSelector((state) => {
     return state.auth.isloggedIn;
   });
@@ -82,6 +81,6 @@ function App() {
       <Footer />
     </Fragment>
   );
-}
+};
 
 export default App;

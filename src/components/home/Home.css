@@ -61,6 +61,12 @@
   background-color: var(--mainColor) !important;
 }
 
+@media (max-width: 991px) {
+  .home-products .card a {
+    display: block;
+    width: 40% !important;
+  }
+}
 @media (max-width: 767px) {
   .buttons .btn {
     padding: 10px 1px !important;
